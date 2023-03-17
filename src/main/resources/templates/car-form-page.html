@@ -1,0 +1,42 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Form Page</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css">
+</head>
+<body>
+<div class="d-flex flex-column w-50 m-auto">
+<h3>Car Form Page</h3>
+<form class="container" th:object="${atrybutObiektFormularza}" th:action="@{/view/car/form}" method="post">
+    <div class="form-group">
+        <label for="pole-nr-rej">Nr rej</label>
+        <input th:field="*{nrRejestracyjny}" type="text" class="form-control" id="pole-nr-rej" aria-describedby="opis-nr-rej" placeholder="Numer rejestracyjny">
+        <small id="opis-nr-rej" class="form-text text-muted">Podaj numer rejstracyjny</small>
+    </div>
+    <hr>
+    <div class="form-group">
+        <label for="pole-data-rej">Data rejestracji</label>
+        <input th:field="*{dataRejestracji}" type="date" class="form-control" id="pole-data-rej" aria-describedby="opis-data-rej" placeholder="Data rejestracji">
+        <small id="opis-data-rej" class="form-text text-muted">Podaj date rejestracji</small>
+    </div>
+    <hr>
+    <div class="form-group">
+        <label for="pole-ilosc-drzwi">Ilosc drzwi</label>
+        <input th:field="*{iloscDrzwi}" type="number" class="form-control" id="pole-ilosc-drzwi" aria-describedby="opis-ilosc-drzwi" placeholder="Ilosc drzwi">
+        <small id="opis-ilosc-drzwi" class="form-text text-muted">Podaj ilosc drzwi w samochodzie</small>
+    </div>
+    <hr>
+    <div class="form-group">
+        <label for="pole-poj-silnika">Pojemnosc silnika</label>
+        <input th:field="*{pojemnoscSilnika}" type="number" class="form-control" id="pole-poj-silnika" aria-describedby="opis-poj-silnika" placeholder="Pojemnosc silnika">
+        <small id="opis-poj-silnika" class="form-text text-muted">Podaj pojemnosc silnika</small>
+    </div>
+    <button class="btn btn-primary form-control" type="submit">Wyslij</button>
+</form>
+</div>
+<script src="webjars/jquery/3.6.3/jquery.min.js"></script>
+<script src="webjars/popper.js/1.16.1/dist/umd/popper.min.js"></script>
+<script src="webjars/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+</body>
+</html>
